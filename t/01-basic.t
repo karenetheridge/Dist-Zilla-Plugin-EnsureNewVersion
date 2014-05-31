@@ -13,9 +13,11 @@ my $tzil = Builder->from_config(
         add_files => {
             path(qw(source dist.ini)) => simple_ini(
                 [ GatherDir => ],
-                [ 'EnsureNewVersion' => ... ],
+                [ 'EnsureNewVersion' ],
             ),
-            path(qw(source lib Foo.pm)) => "package Foo;\n1;\n",
+            path(qw(source lib Foo.pm)) => "package Foo;\n\$Foo::VERSION = 1.0;\n1;\n",
+            path(qw(source lib Bar.pm)) => "package Bar;\nour \$VERSION = 2.0;\n1;\n",
+            path(qw(source lib Baz.pm)) => "package Baz;\nour \$VERSION = 3.0;\npackage Boop;\nour \$VERSION = 4.0;\n1;\n",
         },
     },
 );
