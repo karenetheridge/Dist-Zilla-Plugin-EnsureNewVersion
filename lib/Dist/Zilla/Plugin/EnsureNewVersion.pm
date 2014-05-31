@@ -97,11 +97,15 @@ This is a L<Dist::Zilla> plugin that, at release time, checks all your modules'
 C<$VERSION> declarations against the PAUSE index. If any version is not new,
 the release is aborted.
 
+=for :stopwords filefinder
+
 The C<:InstallModules> filefinder is used to find files to check.
 
 =head1 CONFIGURATION OPTIONS
 
 There are no configuration options at this time.
+
+=for Pod::Coverage before_release
 
 =head1 SUPPORT
 
