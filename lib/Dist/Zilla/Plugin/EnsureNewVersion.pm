@@ -22,7 +22,7 @@ sub before_release
 {
     my $self = shift;
 
-    my $dist_provides = $self->distmeta->{provides};
+    my $dist_provides = $self->zilla->distmeta->{provides};
 
     my @errors;
     foreach my $file (@{ $self->found_files })
